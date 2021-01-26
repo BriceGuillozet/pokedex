@@ -5,8 +5,8 @@ const router = express.Router();
 // On va chercher notre controller pour la route principale
 const mainController = require("./controllers/mainController");
 
-// On déclare la route pour "/"
+// On déclare la route pour "/" qui va utiliser la méthode homePage dans le mainController
 router.get("/", mainController.homePage);
 
-// On pense bien a exporter notre router pour l'utilisation dans les autres fichiers js
+
 module.exports = router;

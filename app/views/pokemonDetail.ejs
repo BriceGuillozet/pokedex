@@ -1,0 +1,100 @@
+<%- include('partials/header') %>
+
+<h1 class="detail__title">Détails de <%= pokemon.nom %></h1>
+
+<div class="detail__container">
+
+    <div class="detail__img">
+        <img src="/img/<%= pokemon.numero %>.png" alt="<%= pokemon.nom %> illustration">
+    </div>
+
+    <div class="detail__info">
+
+        <h2 class="info__title">#<%= pokemon.numero %> <%= pokemon.nom %></h2>
+        <div class="info__types-container">
+            <% pokemons.forEach( (pokemonD) => { %>
+            <p class="info__type" style="background-color:#<%= pokemonD.type_color %>">
+                <%= pokemonD.type_name %>
+            </p>
+            <% }) %>
+        </div>
+
+        <h3 class="info__subtitle">Statistiques</h3>
+
+        <ul class="info__list">
+            <li class="list__elem">
+
+                <p class="stat__name">
+                    PV
+                </p>
+
+                <p class="stat__value">
+                    <%= pokemon.pv %>
+                </p>
+
+                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.pv %>"> </progress>
+            </li>
+
+            <li class="list__elem">
+                <p class="stat__name">
+                    Attaque
+                </p>
+                <p class="stat__value">
+                    <%= pokemon.attaque %>
+                </p>
+                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.attaque %>"> </progress>
+            </li>
+
+            <li class="list__elem">
+                <p class="stat__name">
+                    Défense
+                </p>
+                <p class="stat__value">
+                    <%= pokemon.defense %>
+                </p>
+                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.defense %>"> </progress>
+            </li>
+
+            <li class="list__elem">
+                <p class="stat__name">
+                    Attaque Spé.
+                </p>
+                <p class="stat__value">
+                    <%= pokemon.attaque_spe %>
+                </p>
+                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.attaque_spe %>"> </progress>
+            </li>
+
+            <li class="list__elem">
+                <p class="stat__name">
+                    Défense spé.
+                </p>
+                <p class="stat__value">
+                    <%= pokemon.defense_spe %>
+                </p>
+                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.defense_spe %>"> </progress>
+            </li>
+
+            <li class="list__elem">
+                <p class="stat__name">
+                    Vitesse
+                </p>
+                <p class="stat__value">
+                    <%= pokemon.vitesse %>
+                </p>
+                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.vitesse %>"> </progress>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+</div>
+
+<div class="detail__link">
+    <a href="/">Revenir à la liste</a>
+</div>
+
+<%- include('partials/footer') %>
