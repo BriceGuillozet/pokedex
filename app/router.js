@@ -7,6 +7,7 @@ const mainController = require("./controllers/mainController");
 
 // On déclare la route pour "/" qui va utiliser la méthode homePage dans le mainController
 router.get("/", mainController.homePage);
+router.get('/:id', mainController.detailPage);
 
 
 module.exports = router;
