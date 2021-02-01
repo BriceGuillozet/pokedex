@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+
+<div class="type__container">
+    <% if (typePage === true) { %>
+    
+        <a href="/types/<%=pokemons[0].type_id%>" class="type" style="background-color: #<%=pokemons[0].type_color%>">
+            <%=pokemons[0].type_name%>
+        </a>
+      
+        <% } %>
+</div>
+
+
+<div class="pokemon__container">
+
+    <% pokemons.forEach( (pokemon) => { %>
+
+    <div class="pokemon">
+        <a href="/pokemon/<%= pokemon.id %>">
+            <img src="/img/<%= pokemon.numero %>.png" alt="<%= pokemon.nom %> illustration">
+            <p class="pokemon__name">#<%= pokemon.numero %> <%= pokemon.nom %></p>
+        </a>
+    </div>
+
+    <% }) %>
+</div>
+
+<%- include('partials/footer') %>

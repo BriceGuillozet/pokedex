@@ -1,0 +1,26 @@
+{
+  "name": "pokedex",
+  "version": "1.0.0",
+  "description": "Ceci est un projet de formation où on se propose de créer un pokédex à partir d'une BDD pré-rempli. Nous allons donc travailler en back-end pour renvoyer de l'information en front-end et peupler notre page web.",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BriceGuillozet/pokedex.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BriceGuillozet/pokedex/issues"
+  },
+  "homepage": "https://github.com/BriceGuillozet/pokedex#readme"
+}
