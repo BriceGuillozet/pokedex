@@ -156,6 +156,49 @@ body {
     width: 60%;
 }
 
+/* Main Types */
+
+.type__container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem 2rem;
+    justify-content: space-evenly;
+}
+
+.type {
+    width : 20%;
+    border-radius: 1em;
+    margin: 0.5em 0.2em;
+    padding: 1em 0.5em;
+    text-align: center;
+}
+
+/* Error */
+
+.error__container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 3rem 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.error__message {
+    text-align: center;
+    font-size: 10rem;
+    margin-bottom: 2rem;
+}
+
+.error__message p {
+    font-size: 5rem;
+}
+
+.error__image img {
+    width: 20vw;
+}
+
+
 /* footer */
 
 .footer {

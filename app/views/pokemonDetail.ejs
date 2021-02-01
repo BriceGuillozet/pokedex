@@ -12,10 +12,11 @@
 
         <h2 class="info__title">#<%= pokemon.numero %> <%= pokemon.nom %></h2>
         <div class="info__types-container">
+
             <% pokemons.forEach( (pokemonD) => { %>
-            <p class="info__type" style="background-color:#<%= pokemonD.type_color %>">
+            <a href="/types/<%= pokemonD.type_id %>" class="info__type" style="background-color:#<%= pokemonD.type_color %>">
                 <%= pokemonD.type_name %>
-            </p>
+            </a>
             <% }) %>
         </div>
 
