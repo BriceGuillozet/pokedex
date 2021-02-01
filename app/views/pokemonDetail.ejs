@@ -3,99 +3,85 @@
 <h1 class="detail__title">Détails de <%= pokemon.nom %></h1>
 
 <div class="detail__container">
+  <div class="detail__img">
+    <img
+      src="/img/<%= pokemon.numero %>.png"
+      alt="<%= pokemon.nom %> illustration"
+    />
+  </div>
 
-    <div class="detail__img">
-        <img src="/img/<%= pokemon.numero %>.png" alt="<%= pokemon.nom %> illustration">
+  <div class="detail__info">
+    <h2 class="info__title">#<%= pokemon.numero %> <%= pokemon.nom %></h2>
+    <div class="info__types-container">
+      <% pokemons.forEach( (pokemonD) => { %>
+      <a
+        href="/types/<%= pokemonD.type_id %>"
+        class="info__type"
+        style="background-color: #<%= pokemonD.type_color %>"
+      >
+        <%= pokemonD.type_name %>
+      </a>
+      <% }) %>
     </div>
 
-    <div class="detail__info">
+    <h3 class="info__subtitle">Statistiques</h3>
 
-        <h2 class="info__title">#<%= pokemon.numero %> <%= pokemon.nom %></h2>
-        <div class="info__types-container">
+    <ul class="info__list">
+      <li class="list__elem">
+        <p class="stat__name">PV</p>
 
-            <% pokemons.forEach( (pokemonD) => { %>
-            <a href="/types/<%= pokemonD.type_id %>" class="info__type" style="background-color:#<%= pokemonD.type_color %>">
-                <%= pokemonD.type_name %>
-            </a>
-            <% }) %>
+        <p class="stat__value"><%= pokemon.pv %></p>
+
+        <div class="detail__stat">
+          <span style="width:<%= (pokemon.pv/255)*100 %>%"></span>
         </div>
+      </li>
 
-        <h3 class="info__subtitle">Statistiques</h3>
+      <li class="list__elem">
+        <p class="stat__name">Attaque</p>
+        <p class="stat__value"><%= pokemon.attaque %></p>
+        <div class="detail__stat">
+          <span style="width:<%= (pokemon.attaque/255)*100 %>%"></span>
+        </div>
+      </li>
 
-        <ul class="info__list">
-            <li class="list__elem">
+      <li class="list__elem">
+        <p class="stat__name">Défense</p>
+        <p class="stat__value"><%= pokemon.defense %></p>
+        <div class="detail__stat">
+          <span style="width:<%= (pokemon.defense/255)*100 %>%"></span>
+        </div>
+      </li>
 
-                <p class="stat__name">
-                    PV
-                </p>
+      <li class="list__elem">
+        <p class="stat__name">Attaque Spé.</p>
+        <p class="stat__value"><%= pokemon.attaque_spe %></p>
+        <div class="detail__stat">
+          <span style="width:<%= (pokemon.attaque_spe/255)*100 %>%"></span>
+        </div>
+      </li>
 
-                <p class="stat__value">
-                    <%= pokemon.pv %>
-                </p>
+      <li class="list__elem">
+        <p class="stat__name">Défense spé.</p>
+        <p class="stat__value"><%= pokemon.defense_spe %></p>
+        <div class="detail__stat">
+          <span style="width:<%= (pokemon.defense_spe/255)*100 %>%"></span>
+        </div>
+      </li>
 
-                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.pv %>"> </progress>
-            </li>
-
-            <li class="list__elem">
-                <p class="stat__name">
-                    Attaque
-                </p>
-                <p class="stat__value">
-                    <%= pokemon.attaque %>
-                </p>
-                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.attaque %>"> </progress>
-            </li>
-
-            <li class="list__elem">
-                <p class="stat__name">
-                    Défense
-                </p>
-                <p class="stat__value">
-                    <%= pokemon.defense %>
-                </p>
-                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.defense %>"> </progress>
-            </li>
-
-            <li class="list__elem">
-                <p class="stat__name">
-                    Attaque Spé.
-                </p>
-                <p class="stat__value">
-                    <%= pokemon.attaque_spe %>
-                </p>
-                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.attaque_spe %>"> </progress>
-            </li>
-
-            <li class="list__elem">
-                <p class="stat__name">
-                    Défense spé.
-                </p>
-                <p class="stat__value">
-                    <%= pokemon.defense_spe %>
-                </p>
-                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.defense_spe %>"> </progress>
-            </li>
-
-            <li class="list__elem">
-                <p class="stat__name">
-                    Vitesse
-                </p>
-                <p class="stat__value">
-                    <%= pokemon.vitesse %>
-                </p>
-                <progress class="detail__stat" id="stat" max="255" value="<%= pokemon.vitesse %>"> </progress>
-            </li>
-
-        </ul>
-
-    </div>
-
-
-
+      <li class="list__elem">
+        <p class="stat__name">Vitesse</p>
+        <p class="stat__value"><%= pokemon.vitesse %></p>
+        <div class="detail__stat">
+          <span style="width:<%= (pokemon.vitesse/255)*100 %>%"></span>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="detail__link">
-    <a href="/">Revenir à la liste</a>
+  <a href="/">Revenir à la liste</a>
 </div>
 
 <%- include('partials/footer') %>

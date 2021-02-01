@@ -3,7 +3,6 @@ const database = require("./database");
 // Le dataMapper nous permet d'envoyer nos requêtes SQL pour récupérer les infos qu'on va vouloir utiliser dans les views
 
 const dataMapper = {
-
   // On va d'abord récupérer tous les pokémons pour la page d'acceuil
   getAllPokemon: (callback) => {
     const query = {
@@ -42,7 +41,7 @@ const dataMapper = {
       text: `
             SELECT *
             FROM type
-            `
+            `,
     };
     database.query(query, callback);
   },
@@ -51,9 +50,15 @@ const dataMapper = {
   getPokemonByTypeId: (id, callback) => {
     const query = {
       text: `
-            SELECT pokemon.*
-            FROM pokemon
-            JOIN pokemon_type ON pokemon_type.pokemon_numero = pokemon.numero
+            SELECT pokemon.*,
+            type.name AS type_name, 
+            type.color AS type_color,
+            type.id AS type_id
+            FROM pokemon 
+            JOIN pokemon_type 
+            ON pokemon.numero = pokemon_type.pokemon_numero 
+            JOIN type 
+            ON type.id = pokemon_type.type_id
             WHERE type_id = $1;
             `,
       values: [id],

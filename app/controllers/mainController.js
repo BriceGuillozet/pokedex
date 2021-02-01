@@ -53,7 +53,7 @@ const mainController = {
     const typePage = true;
 
     dataMapper.getPokemonByTypeId(id, (err, results) => {
-      if (err) {
+        if (err) {
         console.trace(err);
         return res.status(500).send("Désolé erreur système");
       }
