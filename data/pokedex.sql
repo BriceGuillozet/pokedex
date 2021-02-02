@@ -441,5 +441,4 @@ INSERT INTO "type" ("id", "name", "color") VALUES
 (13, 'Roche', 'bbaa66'),
 (14, 'Sol', 'ddbb55'),
 (15, 'Spectre', '6666bb'),
-(16, 'Ténèbres', '665544'),
-(17, 'Vol', '6699ff');
+(16, 'Vol', '6699ff');
