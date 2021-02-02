@@ -158,6 +158,16 @@ body {
     margin: 5em 0;
 }
 
+@media screen and (max-width: 1024px) {
+    .detail__container{
+        flex-direction: column;
+        margin: auto;
+    }
+    .detail__info {
+        width: 100%;
+    }
+}
+
 /* Main Types */
 
 .type__container {
@@ -175,6 +185,11 @@ body {
     padding: 1em 0.5em;
     text-align: center;
 }
+@media screen and (max-width: 1024px) {
+    .type{
+        min-width: 40%;
+    }
+}
 
 /* Error */
 
@@ -182,19 +197,19 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 3rem 2rem;
+    margin: auto;
     justify-content: center;
     align-items: center;
 }
 
 .error__message {
     text-align: center;
-    font-size: 10rem;
+    font-size: 5rem;
     margin-bottom: 2rem;
 }
 
 .error__message p {
-    font-size: 5rem;
+    font-size: 2rem;
 }
 
 .error__image img {
@@ -208,6 +223,5 @@ body {
     font-style: italic;
     text-align: center;
     width: 100%;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    margin-top: 5rem;
 }

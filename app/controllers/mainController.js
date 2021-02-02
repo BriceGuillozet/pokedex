@@ -9,7 +9,7 @@ const mainController = {
     dataMapper.getAllPokemon((err, results) => {
       if (err) {
         console.trace(err);
-        return res.status(500).send("Désolé erreur système");
+        return res.status(500).render("error", { error: 500, message: "Page introuvable" });
       }
       res.render("pokemonList", {
         pokemons: results.rows,
@@ -24,7 +24,7 @@ const mainController = {
     dataMapper.getPokemon(reqPokemon, (err, results) => {
       if (err) {
         console.trace(err);
-        return res.status(500).send("Désolé erreur système");
+        return res.status(500).render("error", { error: 500, message: "Page introuvable" });
       }
       res.render("pokemonDetail", {
         pokemons: results.rows,
@@ -38,7 +38,7 @@ const mainController = {
     dataMapper.getAllType((err, results) => {
       if (err) {
         console.trace(err);
-        return res.status(500).send("Désolé erreur système");
+        return res.status(500).render("error", { error: 500, message: "Page introuvable" });
       }
       res.render("typeList", {
         typeList: results.rows,
@@ -55,7 +55,7 @@ const mainController = {
     dataMapper.getPokemonByTypeId(id, (err, results) => {
         if (err) {
         console.trace(err);
-        return res.status(500).send("Désolé erreur système");
+        return res.status(500).render("error", { error: 500, message: "Page introuvable" });
       }
       if (!results.rows) {
         next();
